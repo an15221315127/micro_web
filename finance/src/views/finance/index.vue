@@ -1,6 +1,7 @@
 <template>
     <div>
         <h1>财务模块</h1>
+        {{token}}
         <el-table :data="tableData"
                   stripe
                   style="width: 100%">
@@ -79,7 +80,9 @@
             name: '王小虎',
             address: '上海市普陀区金沙江路 1516 弄'
         }]
-
+        get token() {
+            return this.$store.state.user.token
+        }
         sure() {
             this.$set(this.tableData, this.index, this.form)
             this.dialogTableVisible = false
