@@ -10,7 +10,17 @@ const router = new VueRouter({
             children: [
                 {
                     path: "/product",
-                    component: () => import("./views/product/index.vue")
+                    component: () => import("./views/product/index.vue"),
+                    meta: {
+                        title: "商品模块"
+                    }
+                },
+                {
+                    path: "/order",
+                    component: () => import("order/Order"),
+                    meta: {
+                        title: "订单模块"
+                    }
                 },
             ]
         }

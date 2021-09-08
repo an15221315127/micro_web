@@ -19,6 +19,8 @@
                 <template slot-scope="{row,$index}">
                     <el-button type="primary"
                                @click="edit(row,$index)">编辑</el-button>
+                    <el-button type="primary"
+                               @click="look(row)">查看财务</el-button>
                 </template>
             </el-table-column>
         </el-table>
@@ -90,6 +92,14 @@
             this.form = { ...row }
             this.index = index
             this.dialogTableVisible = true
+        }
+
+        look(row: any) {
+
+            this.$router.push({
+                name: "product",
+                params: { name: row.name }
+            })
         }
     }
 </script>

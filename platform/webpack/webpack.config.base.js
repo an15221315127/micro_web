@@ -99,7 +99,6 @@ module.exports = {
                 order: "order@http://localhost:8082/orderMain.js",
                 finance: "finance@http://localhost:8083/financeMain.js",
             },
-
             exposes: {
                 './Layout': "./src/components/Layout.vue"
             },

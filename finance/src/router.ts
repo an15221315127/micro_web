@@ -10,7 +10,10 @@ const router = new VueRouter({
             children: [
                 {
                     path: "finance",
-                    component: () => import("./views/finance/index.vue")
+                    component: () => import("./views/finance/index.vue"),
+                    meta: {
+                        title: "财务模块"
+                    }
                 }
             ]
         }

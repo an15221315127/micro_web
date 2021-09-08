@@ -96,6 +96,7 @@ module.exports = {
             name: "product",
             remotes: {
                 platform: "platform@http://localhost:8080/platformMain.js",
+                order: "order@http://localhost:8082/orderMain.js",
             },
             exposes: {
                 './Product': "./src/views/product/index.vue"

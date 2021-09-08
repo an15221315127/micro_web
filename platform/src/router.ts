@@ -12,16 +12,27 @@ const router = new VueRouter({
             children: [
                 {
                     path: "/order",
-                    component: () => import("order/Order")
-
+                    name: "order",
+                    component: () => import("order/Order"),
+                    meta: {
+                        title: "订单模块"
+                    }
                 },
                 {
                     path: "product",
-                    component: () => import("product/Product")
+                    name: "product",
+                    component: () => import("product/Product"),
+                    meta: {
+                        title: "商品模块"
+                    }
                 },
                 {
                     path: "/finance",
-                    component: () => import("finance/Finance")
+                    name: "finance",
+                    component: () => import("finance/Finance"),
+                    meta: {
+                        title: "财务模块"
+                    }
 
                 },
             ]

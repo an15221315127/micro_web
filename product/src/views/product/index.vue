@@ -48,7 +48,8 @@
 </template>
 
 <script lang="ts">
-    import { Vue, Component, Watch } from "vue-property-decorator"
+    import { Vue, Component } from "vue-property-decorator"
+
     @Component({
         name: "finance"
     })
@@ -78,19 +79,17 @@
             name: '王小虎',
             address: '上海市普陀区金沙江路 1516 弄'
         }]
-        @Watch("form.date")
-        onChangeVal(val: any) {
-            console.log(val, '--')
-        }
         sure() {
             this.$set(this.tableData, this.index, this.form)
             this.dialogTableVisible = false
+            this.$store.commit("user/set_token", "qwemlooqwenlkmcnuweq.qweqwiueqwenkjcnhkgasyieiom.jgppuwenqmcxhasd")
         }
         edit(row: any, index: number) {
             this.form = { ...row }
             this.index = index
             this.dialogTableVisible = true
         }
+
     }
 </script>
 

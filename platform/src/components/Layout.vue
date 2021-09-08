@@ -1,25 +1,36 @@
 <template>
-    <el-container style="height: 500px; border: 1px solid #eee">
+    <el-container style="height: 100%; border: 1px solid #eee">
+
         <el-aside width="200px"
-                  style="background-color: rgb(238, 241, 246)">
-            <el-menu router>
-                <el-menu-item index="order">订单</el-menu-item>
-                <el-menu-item index="product">商品</el-menu-item>
-                <el-menu-item index="finance">财务</el-menu-item>
+                  style="background-color:rgb(0, 21, 41)">
+            <el-menu router
+                     text-color="#fff"
+                     active-text-color="#ffd04b"
+                     background-color="rgb(0, 21, 41)">
+                <el-menu-item :index="item.path"
+                              v-for="item in routes"
+                              :key="item.path">{{item.meta.title}}</el-menu-item>
             </el-menu>
         </el-aside>
         <el-main>
-            <router-view />
+            <keep-alive>
+                <router-view />
+            </keep-alive>
         </el-main>
     </el-container>
 </template>
 
 <script lang="ts">
-    import { Vue } from "vue-property-decorator"
+    import { Vue, Component } from "vue-property-decorator"
+
+    @Component({
+        name: "Layout"
+    })
     export default class Layout extends Vue {
-        submit() {
-            console.log('hello world')
+        get routes() {
+            return this.$router.options.routes[0].children
         }
+
     }
 </script>
 
