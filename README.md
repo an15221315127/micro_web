@@ -1,9 +1,5 @@
 # micro_web 是一个基于 webpack5 实现的微前端开发 demo
 
-```bash
- git clone git@gitlab.syy.dongchali.cn:anguodong/micro_web.git
-```
-
 ## 基座项目为：platform 子模块项目分别为:product,order,finance
 
 ### 首先分别启动每个应用
